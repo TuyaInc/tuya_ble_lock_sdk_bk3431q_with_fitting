@@ -116,20 +116,16 @@ static void app_common_tuya_ble_sdk_callback(tuya_ble_cb_evt_param_t* param)
         case TUYA_BLE_CB_EVT_UNBOUND:
         //unexpected unbond /restore factory setting
         case TUYA_BLE_CB_EVT_ANOMALY_UNBOUND: {
+            APP_DEBUG_PRINTF("TUYA_BLE_CB_EVT_ANOMALY_UNBOUND");
             lock_factory_handler(false);
             lock_timer_start(LOCK_TIMER_RESET_WITH_DISCONN);
-            
-            suble_gpio_rled_blink(3);
-            lock_play_music(MUSIC_MODE_ONCE, MUSIC_NOTIFY_2);
         } break;
         
         //restore factory setting
         case TUYA_BLE_CB_EVT_DEVICE_RESET: {
+            APP_DEBUG_PRINTF("TUYA_BLE_CB_EVT_DEVICE_RESET");
             lock_factory_handler(false);
             lock_timer_start(LOCK_TIMER_RESET_WITH_DISCONN);
-            
-            suble_gpio_rled_blink(3);
-            lock_play_music(MUSIC_MODE_ONCE, MUSIC_NOTIFY_2);
         } break;
         
         //ota

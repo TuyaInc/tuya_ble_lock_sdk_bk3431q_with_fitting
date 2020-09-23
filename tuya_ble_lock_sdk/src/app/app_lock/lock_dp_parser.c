@@ -1139,23 +1139,17 @@ static uint32_t open_with_master_handler(void* cmd_dp_data, void* rsp_dp_data, u
                 lock_open_record_report_with_delay(OR_LOG_OPEN_WITH_BT, cmd->open_meth_info[0]);
             }
             else {
-                suble_gpio_rled_blink(2);
-                lock_play_music(MUSIC_MODE_ONCE, MUSIC_NOTIFY_1);
-                
                 open_with_master_t open_record_rsp;
                 memcpy(&open_record_rsp, cmd, g_cmd.dp_data_len);
                 open_record_rsp.masterid = rsp->slaveid;
                 open_record_rsp.slaveid = rsp->masterid;
                 open_record_rsp.timestamp = cmd->timestamp;
-                lock_open_record_report_common_with_delay(OR_LOG_OPEN_WITH_COMMON, (void*)&open_record_rsp, g_cmd.dp_data_len);
+                lock_open_record_report_common(OR_LOG_OPEN_WITH_COMMON, (void*)&open_record_rsp, g_cmd.dp_data_len);
             }
             rsp->result = 0x00;
         } else {
             rsp->result = 0x01;
         }
-    }
-    else {
-        lock_play_music(MUSIC_MODE_ONCE, MUSIC_NOTIFY_2);
     }
     
 OPEN_WITH_MASTER_RESPONSE:

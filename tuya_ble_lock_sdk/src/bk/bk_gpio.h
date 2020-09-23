@@ -129,7 +129,6 @@ void suble_key_timeout_handler(void);
 void suble_buzzer_timeout_handler(void);
 void lock_play_music(uint8_t mode, uint32_t music_idx);
 void lock_play_music_cancel(void);
-uint32_t lock_music_maxnum(uint32_t music_idx);
 
 #ifdef __cplusplus
 }

@@ -57,7 +57,6 @@ extern "C"
 //cpt
 #include "cpt_math.h"
 #include "cpt_string_op.h"
-#include "easyflash.h"
 #include "elog.h"
 
 //tuya_ble_sdk

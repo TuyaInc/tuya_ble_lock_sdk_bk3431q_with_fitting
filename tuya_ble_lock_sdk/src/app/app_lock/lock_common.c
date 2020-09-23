@@ -67,8 +67,6 @@ uint32_t lock_open_with_bt(void)
     //open success
     if(!g_auto_switch.open_with_bt_flag)
     {
-        suble_gpio_rled_blink(2);
-        lock_play_music(MUSIC_MODE_ONCE, MUSIC_NOTIFY_1);
         APP_DEBUG_PRINTF("lock_open_with_bt");
         return APP_PORT_SUCCESS;
     }
@@ -83,8 +81,6 @@ uint32_t lock_open_with_master(void)
     //open success
     if(!g_auto_switch.open_with_bt_flag)
     {
-        suble_gpio_rled_blink(2);
-        lock_play_music(MUSIC_MODE_ONCE, MUSIC_NOTIFY_1);
         APP_DEBUG_PRINTF("lock_open_with_master");
         return APP_PORT_SUCCESS;
     }
@@ -99,8 +95,6 @@ uint32_t lock_open_with_nopwd_remote(void)
     //open success
     if(!g_auto_switch.open_with_bt_flag)
     {
-        suble_gpio_rled_blink(2);
-        lock_play_music(MUSIC_MODE_ONCE, MUSIC_NOTIFY_1);
         APP_DEBUG_PRINTF("lock_open_with_nopwd_remote");
         return APP_PORT_SUCCESS;
     }
